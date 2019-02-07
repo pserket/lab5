@@ -1,4 +1,4 @@
-'use strict';
+	'use strict';
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -10,7 +10,18 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".name").click(nameClick);
 }
+
+
+function nameClick(e) { 
+    // prevent the page from reloading      
+    e.preventDefault();
+    // In an event handler, $(this) refers to      
+    // the object that triggered the event      
+    $(this).text(anagrammedName($(this).text()));
+}
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
